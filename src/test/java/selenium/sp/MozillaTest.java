@@ -19,7 +19,7 @@ public class MozillaTest {
     }
     @BeforeEach
     void startDriver(){
-
+        System.out.println("Driver is started.");
     }
 
     @AfterEach
