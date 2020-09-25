@@ -9,7 +9,7 @@ public class MozillaTest extends  MozillaRunner{
 
     @Test
     public void openPage (){
-        driver = new FirefoxDriver();
+
         driver.get("http://google.com");
         driver.findElement(By.name("q")).sendKeys("Selenium GL" + Keys.ENTER);
     }
