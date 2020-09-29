@@ -1,5 +1,6 @@
 package selenium.sp;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriverInfo;
@@ -9,6 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HomeWork3 extends ChromeRunner {
 
@@ -20,7 +23,7 @@ public class HomeWork3 extends ChromeRunner {
         driver.findElement(By.xpath("//button[@name='login']")).click();
         WebDriverWait wait = new WebDriverWait(driver, 5);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@id='box-apps-menu']//li//a")));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//ul[@id='box-apps-menu']/li/a")));
 //        wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath("//head")))); // why fails here???
         List <WebElement> menu = driver.findElements(By.xpath("//li[contains(@class, 'app')]//a"));
 
@@ -31,12 +34,15 @@ public class HomeWork3 extends ChromeRunner {
         //wait.until(ExpectedConditions.presenceOfElementLocated((By.xpath("//li[contains(@class, 'app selected')]//a"))));
 
         // first item is active. Running cycle
-        for(int i=0; i < menu.size(); i++){
+        for(int i=0; i < menu.size()-1; i++){
             //find following to active
-//            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@class='app selected']/following-sibling:://a")));
-            WebElement next = driver.findElement(By.xpath("//li[@class='app selected']/following-sibling::li//a"));
+//            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='app selected']/following-sibling:://a")));
+            WebElement next = driver.findElement(By.xpath("//li[@class='app selected']/following-sibling::li[1]/a"));
             next.click();
-            wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector("head"))));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.panel-heading")));
+            assertTrue(driver.findElement(By.cssSelector("div.panel-heading")).isDisplayed());
+
+
             // add cycle for inside menus
 
         }
