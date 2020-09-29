@@ -39,7 +39,7 @@ public class HomeWork3 extends ChromeRunner {
 //            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='app selected']/following-sibling:://a")));
             WebElement next = driver.findElement(By.xpath("//li[@class='app selected']/following-sibling::li[1]/a"));
             next.click();
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.panel-heading")));
+//            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.panel-heading")));
             assertTrue(driver.findElement(By.cssSelector("div.panel-heading")).isDisplayed());
 
 
