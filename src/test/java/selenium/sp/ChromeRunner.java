@@ -24,7 +24,7 @@ public class ChromeRunner extends Runner {
 
     @AfterEach
     void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
+//        Thread.sleep(3000);
+//        driver.quit();
     }
 }
