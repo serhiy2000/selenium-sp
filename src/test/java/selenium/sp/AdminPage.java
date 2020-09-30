@@ -3,10 +3,15 @@ package selenium.sp;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AdminPage extends ChromeRunner {
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class AdminPage extends ChromeRunner{
     public AdminPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -21,8 +26,8 @@ public class AdminPage extends ChromeRunner {
         return this;
     }
 
-    public AdminPage createCustomer () {
-        //to do later
+    public AdminPage clickAllMenuElements () {
+
         return this;
     }
     public AdminPage addItem (Item item) {
