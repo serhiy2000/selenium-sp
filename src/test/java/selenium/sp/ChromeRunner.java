@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ChromeRunner extends Runner {
 
@@ -20,11 +21,12 @@ public class ChromeRunner extends Runner {
 //        options.addArguments("--kiosk");
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
+        wait = new WebDriverWait(driver, 5);
     }
 
     @AfterEach
     void tearDown() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.quit();
     }
 }
