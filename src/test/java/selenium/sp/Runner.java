@@ -1,6 +1,7 @@
 package selenium.sp;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Runner {
 
@@ -9,4 +10,5 @@ public class Runner {
     public String username = "admin";
     public String pass = "gl_admin";
     public WebDriver driver;
+    WebDriverWait wait;
 }
