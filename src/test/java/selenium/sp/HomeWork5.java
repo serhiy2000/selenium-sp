@@ -15,7 +15,7 @@ public class HomeWork5 extends ChromeRunner {
     @Test
     public void testAdminPage () {
         AdminPage ap = new AdminPage(driver);
-        ap.login(username, pass).addItem(item).logout();
+        //ap.login(username, pass).addItem(item).logout();
 
 
         }
